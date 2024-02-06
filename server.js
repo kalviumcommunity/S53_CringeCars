@@ -1,0 +1,17 @@
+const express = require("express")
+require ("dotenv").config()
+const app = express()
+// app.listen(PORT)
+app.get("/ping",((req,res)=>{
+res.send("hello world")
+}
+))
+const PORT=process.env.PORT || 3000
+app.get("/",((req,res)=>{
+    res.send("Your request is working")
+    
+}))
+app.listen(PORT,()=>{
+    console.log(`http://localhost:${PORT}`);
+})
+
