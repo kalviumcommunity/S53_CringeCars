@@ -1,7 +1,7 @@
 {
   "name": "s53_cringecars",
   "version": "1.0.0",
-  "description": "",
+  "description": "The website is for showcasing the weirdest, funniest, and ugliest cars and car modifications ever made.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
