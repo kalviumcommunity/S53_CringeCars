@@ -1,7 +1,8 @@
 const express = require("express")
 require ("dotenv").config()
 const app = express()
-// app.listen(PORT)
+const connectDB=require("./mongodb")
+connectDB()
 app.get("/ping",((req,res)=>{
 res.send("pong")
 }
