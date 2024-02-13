@@ -3,7 +3,7 @@ require ("dotenv").config()
 const app = express()
 // app.listen(PORT)
 app.get("/ping",((req,res)=>{
-res.send("hello world")
+res.send("pong")
 }
 ))
 const PORT=process.env.PORT || 3000
