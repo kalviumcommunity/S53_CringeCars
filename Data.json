@@ -5,10 +5,7 @@
         "year_of_launch": 1957,
         "price": 2500,
         "company": "Ford",
-        "mileage": {
-            "city": 12,
-            "highway": 15
-        }
+        "mileage": 15
     },
     {
         "name": "DeLorean DMC-12",
@@ -16,10 +13,7 @@
         "year_of_launch": 1981,
         "price": 25000,
         "company": "DeLorean Motor Company",
-        "mileage": {
-            "city": 19,
-            "highway": 25
-        }
+        "mileage": 20
     },
     {
         "name": "AMC Gremlin",
@@ -27,10 +21,7 @@
         "year_of_launch": 1970,
         "price": 1879,
         "company": "American Motors Corporation (AMC)",
-        "mileage": {
-            "city": 18,
-            "highway": 24
-        }
+        "mileage": 14
     },
     {
         "name": "Yugo GV",
@@ -38,21 +29,14 @@
         "year_of_launch": 1985,
         "price": 3990,
         "company": "Zastava Automobiles",
-        "mileage": {
-            "city": 22,
-            "highway": 31
-        }
+        "mileage": 31
     },
     {
         "name": "Chevrolet Vega",
         "rating": 3,
         "year_of_launch": 1970,
         "price": 2090,
-        "company": "Chevrolet (General Motors)",
-        "mileage": {
-            "city": 20,
-            "highway": 28
-        }
+        "company": 21
     },
     {
         "name": "Pontiac Aztek",
@@ -60,10 +44,7 @@
         "year_of_launch": 2001,
         "price": 21445,
         "company": "Pontiac (General Motors)",
-        "mileage": {
-            "city": 18,
-            "highway": 24
-        }
+        "mileage": 24
     },
     {
         "name": "Fiat Multipla",
@@ -71,9 +52,7 @@
         "year_of_launch": 1998,
         "price": 14500,
         "company": "Fiat",
-        "mileage": {
-            "combined": 28
-        }
+        "mileage": 28
     },
     {
         "name": "Edsel Corsair",
@@ -81,10 +60,7 @@
         "year_of_launch": 1958,
         "price": 3000,
         "company": "Ford",
-        "mileage": {
-            "city": 11,
-            "highway": 15
-        }
+        "mileage": 15
     },
     {
         "name": "Cadillac Cimarron",
@@ -92,10 +68,7 @@
         "year_of_launch": 1981,
         "price": 12131,
         "company": "Cadillac (General Motors)",
-        "mileage": {
-            "city": 19,
-            "highway": 25
-        }
+        "mileage": 25
     },
     {
         "name": "Chevrolet Corvair",
@@ -103,9 +76,6 @@
         "year_of_launch": 1959,
         "price": 2039,
         "company": "Chevrolet (General Motors)",
-        "mileage": {
-            "city": 20,
-            "highway": 28
-        }
+        "mileage": 28
     }
 ]
