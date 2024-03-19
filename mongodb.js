@@ -4,11 +4,11 @@ const mongoURI = process.env.MONGO_URI;
 const connectDB = async () => {
   try {
     await mongoose.connect(mongoURI);
-    console.log("DataBase have been succesfully Connected");
+    console.log("DataBase Connected");
   } catch (error) {
     console.log("error:", error);
-    console.log("DataBase have Disconnected ,Please check the errors.");
+
   }
 };
 
-module.exports=connectDB
+module.exports=connectDB 
