@@ -70,7 +70,7 @@ router.delete("/cars/delete/:id", async (req, res) => {
   } catch (err) {
     res.status(400).send({
       message: false,
-      response: "Error occurred while deleting the car.",
+      response: "An Error was occurred while deleting the car.",
       error: err,
     });
   }
