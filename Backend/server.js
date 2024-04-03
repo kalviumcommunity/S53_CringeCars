@@ -1,12 +1,12 @@
 const express = require("express")
 require ("dotenv").config()
 const app = express()
-const router = require("./Route")
-app.use(router)
 const connectDB=require("./mongodb")
 connectDB()
+const router = require("./Route")
+app.use(router)
 app.get("/ping",((req,res)=>{
-res.send("pong")
+    res.send("pong")
 }
 ))
 const PORT=process.env.PORT || 3000
