@@ -2,7 +2,10 @@ const express = require("express")
 require ("dotenv").config()
 const app = express()
 const connectDB=require("./mongodb")
+
 connectDB()
+const cors=require("cors")
+app.use(cors())
 const router = require("./Route")
 app.use(router)
 app.get("/ping",((req,res)=>{
