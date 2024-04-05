@@ -6,7 +6,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/Cars")
+      .get("https://cringe-cars.onrender.com/Cars")
       .then((res) => {
         setData(res.data);
       })
@@ -23,7 +23,7 @@ const LandingPage = () => {
             <img src={car.img} alt={car.name} className="card-img-top" />
             <div className="card-body">
               <h5 className="card-title">{car.name}</h5>
-              <p className="card-text">Rating: {car.rating}</p>
+              <p className="card-text">Rating: {car.rating}/10</p>
               <p className="card-text">Year of Launch: {car.year_of_launch}</p>
               <p className="card-text">Price: ${car.price}</p>
               <p className="card-text">Company: {car.company}</p>
