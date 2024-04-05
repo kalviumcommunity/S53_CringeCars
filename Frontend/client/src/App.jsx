@@ -5,6 +5,7 @@ import SignUp from './components/Signup'
 import Login from './components/Login'
 import {Route, Routes} from "react-router-dom"
 import Home from './components/Home'
+import LandingPage from './components/LandingPage'
 
 
 
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar/>
+      <LandingPage/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
