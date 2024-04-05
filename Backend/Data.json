@@ -41,7 +41,8 @@
         "rating": 3,
         "year_of_launch": 1970,
         "price": 2090,
-        "company": 21
+        "company": "Chevrolet",
+        "mileage": 12 
     },
     {
         "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/2002-05_Pontiac_Aztek.jpg/640px-2002-05_Pontiac_Aztek.jpg",
