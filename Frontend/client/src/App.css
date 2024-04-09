@@ -106,6 +106,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
   width: 385px;
   margin: auto;
+  margin-top: 40px;
 }
 
 h2 {
@@ -128,7 +129,7 @@ select {
 }
 
 input[type="submit"] {
-  background-color: #4CAF50; 
+  background-color: #0066ff; 
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -139,13 +140,89 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049; 
+  background-color: #0052cc; 
 }
 
 .error-message {
   color: #ff6347; 
   margin-bottom: 10px;
 }
+
+
+
+
+
+#aboutus{
+  margin-top: 40px;
+  margin-left: 150px;
+  margin-right: 150px;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+
+
+.form-container {
+    width: 600px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #666666;
+    border-radius: 10px;
+    background-color: #333333;
+}
+
+#car-rating-container {
+    width: 300px;
+}
+
+#car-year,
+#car-image,
+#car-name,
+#car-company,
+#car-price,
+#car-rating,
+#car-mileage {
+    width: 550px; 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    background-color: #444444;
+    color: #ffffff;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066ff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0052cc;
+}
+
+
+
 
 
 

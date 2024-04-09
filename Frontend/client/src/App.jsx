@@ -6,6 +6,8 @@ import Login from './components/Login'
 import {Route, Routes} from "react-router-dom"
 import Home from './components/Home'
 import LandingPage from './components/LandingPage'
+import CarForm from './components/CarForm'
+import About from './components/About'
 
 
 
@@ -15,11 +17,12 @@ function App() {
   return (
     <div>
       <Navbar/>
-      <LandingPage/>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/landingpage" element={<LandingPage />} />
+        <Route path="/aboutus" element={<About />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/carform" element={<CarForm />} />
       </Routes>
     </div>
   );
