@@ -24,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/carform" element={<CarForm />} />
       </Routes>
+      <LandingPage/>
     </div>
   );
 }

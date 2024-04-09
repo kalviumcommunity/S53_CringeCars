@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../App.css"
+import "../App.css";
 const LandingPage = () => {
   const [data, setData] = useState([]);
 
@@ -17,7 +17,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className="maincontainer"> 
+      <div className="maincontainer">
         {data.map((car, i) => (
           <div className="card" key={i}>
             <img src={car.img} alt={car.name} className="card-img-top" />
