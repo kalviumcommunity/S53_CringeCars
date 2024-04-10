@@ -9,7 +9,7 @@ const schema = new mongoose.Schema({
     require: true,
   },
   rating: {
-    type: Number,
+    type: String,
     require: true,
   },
   year_of_launch: {
@@ -25,7 +25,7 @@ const schema = new mongoose.Schema({
     require: true,
   },
   mileage: {
-    type: Number,
+    type: String,
     require: true,
   }
 });
