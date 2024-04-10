@@ -10,7 +10,7 @@ function CarForm() {
   const onSubmit = async (data) => {
     try {
       // Send form data to the backend
-      await axios.post("http://localhost:3001/Cars", data);
+      await axios.post("http://localhost:3001/cars/add", data);
       toast.success("Car added successfully!");
       reset(); // Reset the form after successful submission
     } catch (error) {
@@ -28,8 +28,8 @@ function CarForm() {
           <label htmlFor="car-image">Image Address:</label>
           <input
             type="text"
-            id="car-image"
-            {...register("image", { required: true })}
+            id="img"
+            {...register("img", { required: true })}
           />
         </div>
         <div className="form-group">
@@ -37,7 +37,7 @@ function CarForm() {
           <input
             type="text"
             id="car-name"
-            {...register("carName", { required: true })}
+            {...register("name", { required: true })}
           />
         </div>
         <div className="form-group">
@@ -53,7 +53,7 @@ function CarForm() {
           <input
             type="text"
             id="car-year"
-            {...register("year", {
+            {...register("year_of_launch", {
               required: true,
               min: 1900,
               max: 2099,

@@ -21,7 +21,6 @@ router.get("/Cars", async (req, res) => {
 router.post("/cars/add", async (req, res) => {
   try {
     const newCar = await CarModel.create(req.body);
-    console.log("New car created: ", newCar);
     res.status(201).send(newCar);
   } catch (err) {
     res.status(400).send({
