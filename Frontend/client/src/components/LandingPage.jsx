@@ -50,10 +50,8 @@ const LandingPage = () => {
 
   const handleUpdateConfirm = () => {
     if (updatedData <= 5) {
-      // Prepare the updated car object
       const updatedCar = { rating: updatedData };
 
-      // Send a PUT request to update the rating
       axios
         .put(
           `https://cringe-cars.onrender.com/Cars/update/${selectedCarId}`,
@@ -61,9 +59,7 @@ const LandingPage = () => {
         )
         .then((res) => {
           console.log("Rating updated:", res.data);
-          // Fetch the updated data to reflect changes
           fetchData();
-          // Close the popup
           handleClosePopup();
         })
         .catch((error) => {

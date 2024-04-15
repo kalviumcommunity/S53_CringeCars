@@ -1,5 +1,7 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const {
@@ -8,9 +10,25 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+const navigation = useNavigate()
+
+  const onSubmit = async (data) => {
+  
+  
+  try {
+    const usercheck = await axios.post("http://localhost:3001/login", data);
+      console.log(usercheck.data.Message);
+
+    if(usercheck.data.message){
+      alert("You Have been logged in !");
+      navigation("/landingpage");
+    }
+  } catch (error) {
+    alert(error.message);
+  }
+  
+  }
+  
 
   return (
     <div className="container">
