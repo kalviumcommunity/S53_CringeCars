@@ -31,4 +31,39 @@ const schema = new mongoose.Schema({
 });
 
 const CarModel = mongoose.model("Cars List", schema);
-module.exports = CarModel;
+
+
+
+
+
+
+const signUpSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    minlength: 4,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    validate: {
+      validator: (value) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      },
+      message: "Invalid email address",
+    },
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  gender: {
+    type: String,
+    enum: ["male", "female", "other"],
+    required: true,
+  },
+});
+
+const userModel =  mongoose.model("SignUp", signUpSchema);
+module.exports = {CarModel, userModel};

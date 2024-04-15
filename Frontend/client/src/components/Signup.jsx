@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const {
@@ -8,8 +9,27 @@ function SignUp() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+const navigation = useNavigate()
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3001/user/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData);
+        navigation("/login");
+      } else {
+        console.error("Failed to submit form");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -42,14 +62,7 @@ function SignUp() {
           placeholder="Password"
           {...register("password", { required: true })}
         />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          {...register("confirmPassword", { required: true })}
-        />
-        {errors.password && errors.confirmPassword && (
-          <div className="error-message">Passwords do not match</div>
-        )}
+        
         <select {...register("gender", { required: true })}>
           <option value="" disabled>
             Select Gender

@@ -5,6 +5,7 @@ const connectDB=require("./mongodb")
 
 connectDB()
 const cors=require("cors")
+app.use(express.json())
 app.use(cors())
 const router = require("./Route")
 app.use(router)
