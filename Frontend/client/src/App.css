@@ -100,7 +100,7 @@ body {
 
 
 .container {
-  background-color: #3e3c3c; 
+  background-color: #333333; 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
@@ -221,6 +221,84 @@ input[type="submit"]:hover {
     background-color: #0052cc;
 }
 
+
+
+
+
+
+.popup-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  height: 160px;
+  width: 200px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0066ff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #0052cc;
+}
+
+
+.maincontainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.card-body {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.delete,
+.update {
+  cursor: pointer;
+  margin-right: 5px;
+}
 
 
 
