@@ -8,9 +8,18 @@ const LandingPage = () => {
   const [updatedData, setUpdatedData] = useState("");
   const [selectedCarId, setSelectedCarId] = useState("");
 
+  const [signin, setIsLoggedIn] = useState(false);
+
   useEffect(() => {
     fetchData();
   }, []);
+
+  useEffect(() => {
+    const accessTokenCookie = document.cookie
+      .split(";")
+      .find((cookie) => cookie.trim().startsWith("access_token="));
+    setIsLoggedIn(!!accessTokenCookie);
+});
 
   const fetchData = () => {
     axios
@@ -83,12 +92,28 @@ const LandingPage = () => {
               <p className="card-text">Price: ${car.price}</p>
               <p className="card-text">Company: {car.company}</p>
               <p className="card-text">Mileage: {car.mileage} kmpl</p>
-              <button className="delete" onClick={() => handleDelete(car._id)}>
-                Delete
-              </button>
-              <button className="update" onClick={() => handleUpdate(car._id)}>
-                Update
-              </button>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  alignItems: "center",
+                }}
+              >
+                <button
+                  style={{ display: signin ? "block" : "none" }}
+                  className="delete"
+                  onClick={() => handleDelete(car._id)}
+                >
+                  Delete
+                </button>
+                <button
+                  style={{ display: signin ? "block" : "none" }}
+                  className="update"
+                  onClick={() => handleUpdate(car._id)}
+                >
+                  Update
+                </button>
+              </div>
             </div>
           </div>
         ))}
