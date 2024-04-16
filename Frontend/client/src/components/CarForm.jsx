@@ -9,12 +9,10 @@ function CarForm() {
 
   const onSubmit = async (data) => {
     try {
-      // Send form data to the backend
       await axios.post("http://localhost:3001/cars/add", data);
       toast.success("Car added successfully!");
-      reset(); // Reset the form after successful submission
+      reset(); 
     } catch (error) {
-      // Handle error
       console.error("Error adding car:", error);
     }
   };
@@ -92,3 +90,10 @@ function CarForm() {
 }
 
 export default CarForm;
+
+
+
+
+
+
+

@@ -10,25 +10,22 @@ function Login() {
     formState: { errors },
   } = useForm();
 
-const navigation = useNavigate()
+  const navigation = useNavigate();
 
   const onSubmit = async (data) => {
-  
-  
-  try {
-    const usercheck = await axios.post("http://localhost:3001/login", data);
-      console.log(usercheck.data.Message);
+    try {
+      const response = await axios.post("http://localhost:3001/login", data);
+      console.log(response.data.message);
 
-    if(usercheck.data.message){
-      alert("You Have been logged in !");
-      navigation("/landingpage");
+      if (response.data.message === "Login successful") {
+        alert("You have been logged in!");
+        document.cookie = `access_token=${response.data.accessToken}`;
+        navigation("/landingpage");
+      }
+    } catch (error) {
+      alert(error.message);
     }
-  } catch (error) {
-    alert(error.message);
-  }
-  
-  }
-  
+  };
 
   return (
     <div className="container">
