@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../context/ParentContext";
 
 function NavBar() {
-  // State to track if the user is logged in
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const {isLoggedIn, setIsLoggedIn} = useContext(AppContext)
 
-  // Function to handle logout
   const handleLogout = () => {
-    // Set the expiration date of the access token cookie to a past time
     document.cookie = "access_token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-    // Update state to reflect logout
     setIsLoggedIn(false);
   };
 
   useEffect(() => {
-    // Check if access token cookie exists when component mounts
     const accessTokenCookie = document.cookie
       .split(";")
       .find((cookie) => cookie.trim().startsWith("access_token="));
@@ -33,7 +29,6 @@ function NavBar() {
         <Link to="/" className="navbar-link">
           Contact
         </Link>
-        {/* Conditional rendering based on user login status */}
         {!isLoggedIn && (
           <>
             <Link to="/signup" className="navbar-link">

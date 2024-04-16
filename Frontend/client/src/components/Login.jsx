@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/ParentContext";
 
 function Login() {
   const {
@@ -9,6 +10,8 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const { isLoggedIn, setIsLoggedIn } = useContext(AppContext);
 
   const navigation = useNavigate();
 
@@ -20,6 +23,7 @@ function Login() {
       if (response.data.message === "Login successful") {
         alert("You have been logged in!");
         document.cookie = `access_token=${response.data.accessToken}`;
+        setIsLoggedIn(true);
         navigation("/landingpage");
       }
     } catch (error) {
