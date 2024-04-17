@@ -45,6 +45,26 @@ body {
 }
 
 
+.inputtype{
+  width: 80px;
+}
+
+.container{
+  width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .card {
   width: calc(100% - 40px); 
   max-width: 300px; 
