@@ -7,9 +7,9 @@ const LandingPage = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [updatedData, setUpdatedData] = useState("");
   const [selectedCarId, setSelectedCarId] = useState("");
-
   const [signin, setIsLoggedIn] = useState(false);
-
+  const [minMileage, setMinMileage] = useState(0);
+  const [maxMileage, setMaxMileage] = useState(5); 
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,7 +19,7 @@ const LandingPage = () => {
       .split(";")
       .find((cookie) => cookie.trim().startsWith("access_token="));
     setIsLoggedIn(!!accessTokenCookie);
-});
+  });
 
   const fetchData = () => {
     axios
@@ -79,10 +79,47 @@ const LandingPage = () => {
     }
   };
 
+  const filterCarsByMileage = () => {
+    return data.filter(
+      (car) =>
+        parseInt(car.mileage) >= minMileage &&
+        parseInt(car.mileage) <= maxMileage
+    );
+  };
+
+  const generateMileageOptions = () => {
+    const options = [];
+    for (let i = 0; i <= 50; i += 5) {
+      options.push(
+        <option key={i} value={i}>
+          {i}
+        </option>
+      );
+    }
+    return options;
+  };
+
   return (
-    <div className="maincontainer">
-      {data.length > 0 &&
-        data.map((car, i) => (
+    <div>
+      <div className="container">
+        <label>Minimum Mileage:</label>
+        <select
+          value={minMileage}
+          onChange={(e) => setMinMileage(parseInt(e.target.value))}
+        >
+          {generateMileageOptions()}
+        </select>
+
+        <label>Maximum Mileage:</label>
+        <select
+          value={maxMileage}
+          onChange={(e) => setMaxMileage(parseInt(e.target.value))}
+        >
+          {generateMileageOptions()}
+        </select>
+      </div>
+      <div className="maincontainer">
+        {filterCarsByMileage().map((car, i) => (
           <div className="card" key={i}>
             <img src={car.img} alt={car.name} className="card-img-top" />
             <div className="card-body">
@@ -117,26 +154,30 @@ const LandingPage = () => {
             </div>
           </div>
         ))}
-      {showPopup && (
-        <div className="popup-background">
-          <div className="popup">
-            <div className="popup-content">
-              <input
-                type="text"
-                value={updatedData}
-                onChange={handleInputChange}
-                placeholder="Enter updated rating"
-              />
-              <button className="update-confirm" onClick={handleUpdateConfirm}>
-                Update
-              </button>
-              <button className="close" onClick={handleClosePopup}>
-                Close
-              </button>
+        {showPopup && (
+          <div className="popup-background">
+            <div className="popup">
+              <div className="popup-content">
+                <input
+                  type="text"
+                  value={updatedData}
+                  onChange={handleInputChange}
+                  placeholder="Enter updated rating"
+                />
+                <button
+                  className="update-confirm"
+                  onClick={handleUpdateConfirm}
+                >
+                  Update
+                </button>
+                <button className="close" onClick={handleClosePopup}>
+                  Close
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
